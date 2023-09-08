@@ -145,6 +145,7 @@ const handleUpload = (event) => {
           showDeleteConfirm(file)
         }
       } catch (err) {
+        loading.value = false
         message.error('接口异常！')
       }
     })
