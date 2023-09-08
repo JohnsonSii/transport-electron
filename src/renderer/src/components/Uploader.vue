@@ -54,8 +54,8 @@ if (!fs.existsSync(filePath)) {
     api: [
       {
         name: '服务器',
-        upload: 'http://api.silencelurker.xyz/transport/uploadFile',
-        download: 'http://api.silencelurker.xyz/transport/getFile'
+        upload: 'http://127.0.0.1/transport/uploadFile',
+        download: 'http://127.0.0.1/transport/getFile'
       }
     ]
   }

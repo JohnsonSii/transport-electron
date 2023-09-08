@@ -23,6 +23,7 @@
 import { ref, watch } from 'vue'
 const { ipcRenderer } = require('electron')
 const fs = require('fs')
+import { message } from 'ant-design-vue'
 
 const fileNameValue = ref('')
 const downloadPath = ref('')
@@ -55,7 +56,7 @@ if (fs.existsSync(filePath)) {
 const handleDownload = () => {
   console.log(downloadPath.value)
   if (!fileNameValue.value) {
-    console.error('文件名不能为空')
+    message.error('文件名不能为空')
     return
   }
 
@@ -67,13 +68,13 @@ const handleDownload = () => {
     })
     .then((response) => {
       if (response.success) {
-        console.log('文件保存成功')
+        message.success('文件保存成功')
       } else {
-        console.error('文件保存失败', response.error)
+        message.error('文件保存失败')
       }
     })
-    .catch((error) => {
-      console.error('文件保存失败', error)
+    .catch(() => {
+      message.error('文件保存失败')
     })
 }
 
