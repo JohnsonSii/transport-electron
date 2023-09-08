@@ -1,5 +1,8 @@
 <template>
   <div class="content3 center">
+    <div v-show="loading" class="masks center">
+      <a-spin size="large" />
+    </div>
     <div class="title">
       所有人：
       <a-select ref="select" v-model:value="value">
@@ -20,10 +23,10 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, h } from 'vue'
 const { ipcRenderer } = require('electron')
 const fs = require('fs')
-import { message } from 'ant-design-vue'
+import { message, Modal } from 'ant-design-vue'
 
 const fileNameValue = ref('')
 const downloadPath = ref('')
@@ -32,6 +35,17 @@ const value = ref('')
 const globalConfig = ref()
 const selectOptions = ref([])
 const currentDownloadUrl = ref('')
+const loading = ref(false)
+
+const info = () => {
+  Modal.info({
+    title: '提示！',
+    content: h('div', {}, [h('p', '您的接口配置列表为空，请前往设置页面进行添加！')]),
+    onOk() {
+      console.log('确定')
+    }
+  })
+}
 
 if (fs.existsSync(filePath)) {
   fs.readFile(filePath, 'utf8', (err, data) => {
@@ -42,6 +56,9 @@ if (fs.existsSync(filePath)) {
 
     try {
       const config = JSON.parse(data)
+      if (config.api.length === 0) {
+        info()
+      }
       console.log(config)
       downloadPath.value = config.downloadPath
       globalConfig.value = config
@@ -59,7 +76,7 @@ const handleDownload = () => {
     message.error('文件名不能为空')
     return
   }
-
+  loading.value = true
   ipcRenderer
     .invoke('save-dialog', {
       defaultPath: downloadPath.value,
@@ -68,12 +85,15 @@ const handleDownload = () => {
     })
     .then((response) => {
       if (response.success) {
+        loading.value = false
         message.success('文件保存成功')
       } else {
+        loading.value = false
         message.error('文件保存失败')
       }
     })
     .catch(() => {
+      loading.value = false
       message.error('文件保存失败')
     })
 }
@@ -104,5 +124,13 @@ watch(value, (_val) => {
   align-items: center;
   font-weight: 600;
   z-index: 50;
+}
+
+.masks {
+  position: absolute;
+  width: calc(100% - 230px);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9000;
 }
 </style>

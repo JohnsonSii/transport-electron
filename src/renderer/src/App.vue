@@ -23,7 +23,7 @@
         </a-menu-item>
       </a-menu>
     </div>
-    <div class="component --1">
+    <div class="component">
       <Uploader v-if="currentKey === 1" />
       <Setting v-if="currentKey === 3" />
       <Download v-if="currentKey === 2" />
@@ -75,5 +75,9 @@ const handleSelect = (e) => {
 }
 .menu-item span {
   margin-left: 15px;
+}
+.component {
+  overflow: hidden;
+  width: calc(100% - 230px);
 }
 </style>

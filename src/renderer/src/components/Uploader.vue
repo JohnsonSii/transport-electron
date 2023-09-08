@@ -1,5 +1,8 @@
 <template>
   <div class="content center">
+    <div v-show="loading" class="masks center">
+      <a-spin size="large" />
+    </div>
     <div class="card center" @drop="handleUpload($event)" @dragover="handleDragOver($event)">
       <div class="title">
         所有人：
@@ -28,7 +31,7 @@
 </template>
 
 <script setup>
-import { ref, watch, createVNode } from 'vue'
+import { ref, watch, createVNode, h } from 'vue'
 import axios from 'axios'
 import { message, Modal } from 'ant-design-vue'
 import { ExclamationCircleOutlined } from '@ant-design/icons-vue'
@@ -46,6 +49,18 @@ const downloadValue = ref(downloadsFolder)
 const globalConfig = ref()
 const selectOptions = ref([])
 const currentUploadUrl = ref('')
+
+const info = () => {
+  Modal.info({
+    title: '提示！',
+    content: h('div', {}, [h('p', '您的接口配置列表为空，请前往设置页面进行添加！')]),
+    onOk() {
+      console.log('确定')
+    }
+  })
+}
+
+const loading = ref(false)
 
 if (!fs.existsSync(filePath)) {
   // 文件不存在，创建一个新文件
@@ -80,6 +95,9 @@ if (!fs.existsSync(filePath)) {
 
     try {
       const config = JSON.parse(data)
+      if (config.api.length === 0) {
+        info()
+      }
       console.log(config)
       globalConfig.value = config
       selectOptions.value = config.api
@@ -96,6 +114,7 @@ const handleDragOver = (event) => {
 }
 
 const handleUpload = (event) => {
+  loading.value = true
   event.preventDefault()
   let file = event.dataTransfer.files[0]
   console.log(`${currentUploadUrl.value}`)
@@ -113,6 +132,7 @@ const handleUpload = (event) => {
     )
     .then((res) => {
       if (res.status === 200) {
+        loading.value = false
         message.success('上传成功!')
       }
     })
@@ -121,6 +141,7 @@ const handleUpload = (event) => {
       try {
         if (err.response.status === 400) {
           // message.error('文件已存在!')
+          loading.value = false
           showDeleteConfirm(file)
         }
       } catch (err) {
@@ -139,6 +160,7 @@ const showDeleteConfirm = (file) => {
     cancelText: '取消',
     onOk() {
       console.log('OK')
+      loading.value = true
       axios
         .post(
           `${currentUploadUrl.value}?replace=true`,
@@ -153,6 +175,7 @@ const showDeleteConfirm = (file) => {
         )
         .then((res) => {
           if (res.status === 200) {
+            loading.value = false
             message.success('覆盖成功!')
           }
         })
@@ -183,11 +206,19 @@ watch(value, (_val) => {
   box-sizing: border-box;
   margin: 15px;
   height: calc(100% - 30px);
-  width: 100%;
+  width: calc(100% - 30px);
   border-radius: 10px;
   border: 1px dashed rgba(200, 200, 200, 1);
   background-color: rgba(240, 240, 240, 0.5);
   overflow: hidden;
+}
+
+.masks {
+  position: absolute;
+  width: calc(100% - 230px);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9000;
 }
 
 .title {
