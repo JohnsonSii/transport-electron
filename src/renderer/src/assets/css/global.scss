@@ -1,0 +1,596 @@
+/* 开发模式背景颜色 */
+
+.dev {
+  background-color: rgba(100, 100, 200, 0.35);
+}
+
+/* flex 布局 */
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.fas {
+  justify-content: flex-start;
+}
+
+.fae {
+  justify-content: flex-end;
+}
+
+.faa {
+  justify-content: space-around;
+}
+
+.fab {
+  justify-content: space-between;
+}
+
+.fac {
+  justify-content: center;
+}
+
+.sas {
+  align-items: flex-start;
+}
+
+.sae {
+  align-items: flex-end;
+}
+
+.saa {
+  align-items: space-around;
+}
+
+.sab {
+  align-items: space-between;
+}
+
+.sac {
+  align-items: center;
+}
+
+.rowleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rowright {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rowcenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.colleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.colright {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.colcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* flex 比值 */
+
+.--1 {
+  flex: 1;
+}
+.--2 {
+  flex: 2;
+}
+.--3 {
+  flex: 3;
+}
+.--4 {
+  flex: 4;
+}
+.--5 {
+  flex: 5;
+}
+.--6 {
+  flex: 6;
+}
+.--7 {
+  flex: 7;
+}
+.--8 {
+  flex: 8;
+}
+.--9 {
+  flex: 9;
+}
+.--10 {
+  flex: 10;
+}
+.--11 {
+  flex: 11;
+}
+.--12 {
+  flex: 12;
+}
+.--13 {
+  flex: 13;
+}
+.--14 {
+  flex: 14;
+}
+.--15 {
+  flex: 15;
+}
+.--16 {
+  flex: 16;
+}
+.--17 {
+  flex: 17;
+}
+.--18 {
+  flex: 18;
+}
+.--19 {
+  flex: 19;
+}
+.--20 {
+  flex: 20;
+}
+.--21 {
+  flex: 21;
+}
+.--22 {
+  flex: 22;
+}
+.--23 {
+  flex: 23;
+}
+.--24 {
+  flex: 24;
+}
+.--25 {
+  flex: 25;
+}
+.--26 {
+  flex: 26;
+}
+.--27 {
+  flex: 27;
+}
+.--28 {
+  flex: 28;
+}
+.--29 {
+  flex: 29;
+}
+.--30 {
+  flex: 30;
+}
+.--31 {
+  flex: 31;
+}
+.--32 {
+  flex: 32;
+}
+
+/* 阴影样式 */
+
+.tinyshadow {
+    box-shadow: 0rpx 2rpx 4rpx 0rpx rgba(0, 0, 0, 0.25);
+}
+
+.smallshadow {
+    box-shadow: 2rpx 2rpx 4rpx 1rpx rgba(0, 0, 0, 0.25);
+  }
+
+.midshadow {
+  box-shadow: 3rpx 3rpx 6rpx 2rpx rgba(0, 0, 0, 0.25);
+}
+
+.bigshadow {
+    box-shadow: 4rpx 4rpx 8rpx 3rpx rgba(0, 0, 0, 0.25);
+}
+
+.hugeshadow {
+    box-shadow: 5rpx 5rpx 10rpx 4rpx rgba(0, 0, 0, 0.25);
+}
+
+/* 字体颜色 */
+
+.whitefont {
+  color: #FFFFFF;
+}
+
+.blackfont {
+  color: #000000
+}
+
+.deepfont {
+  color: #202020;
+}
+
+.infofont {
+  color: #909399;
+}
+
+.impfont {
+  color: #409EFF
+}
+
+.successfont {
+  color: #67C23A
+}
+
+.warningfont {
+  color: #E6A23C;
+}
+
+.errorfont {
+  color: #F56C6C;
+}
+
+/* 字体大小 */
+
+.tinyfont {
+  font-size: 20rpx;
+}
+
+.smallfont {
+  font-size: 30rpx;
+}
+
+.midfont {
+  font-size: 40rpx;
+}
+
+.bigfont {
+  font-size: 50rpx;
+}
+
+.hugefont {
+  font-size: 60rpx;
+}
+
+.largestfont {
+  font-size: 80rpx;
+}
+
+/* 字体加粗 */
+
+.boldfont {
+  font-weight: 600;
+}
+
+/* 圆角样式 */
+
+.tinyradius {
+  border-radius: 10rpx;
+}
+
+.smallradius {
+  border-radius: 15rpx;
+}
+
+.midradius {
+  border-radius: 20rpx;
+}
+
+.bigradius {
+  border-radius: 30rpx;
+}
+
+.hugeradius {
+  border-radius: 40rpx;
+}
+
+.largestradius {
+  border-radius: 50rpx;
+}
+
+.circleradius {
+  border-radius: 50%;
+}
+
+/* 边距样式 */
+
+.automargin {
+  margin: 0 auto;
+}
+
+.smallmargin {
+  margin: 10rpx
+}
+
+.midmargin {
+  margin: 20rpx
+}
+
+.bigmargin {
+  margin: 30rpx
+}
+
+.smallpadding {
+  padding: 10rpx
+}
+
+.midpadding {
+  padding: 20rpx
+}
+
+.bigpadding {
+  padding: 30rpx
+}
+
+.mt {
+  margin-top: 20rpx;
+}
+.mt-1 {
+  margin-top: 10rpx;
+}
+.mt-2 {
+  margin-top: 5rpx;
+}
+.mt1 {
+  margin-top: 30rpx;
+}
+.mt2 {
+  margin-top: 40rpx;
+}
+.mt3 {
+  margin-top: 50rpx;
+}
+.mt4 {
+  margin-top: 80rpx;
+}
+.mt5 {
+  margin-top: 120rpx;
+}
+
+
+.mr {
+  margin-right: 20rpx;
+}
+.mr-1 {
+  margin-right: 10rpx;
+}
+.mr-2 {
+  margin-right: 5rpx;
+}
+.mr1 {
+  margin-right: 30rpx;
+}
+.mr2 {
+  margin-right: 40rpx;
+}
+.mr3 {
+  margin-right: 50rpx;
+}
+.mr4 {
+  margin-right: 80rpx;
+}
+.mr5 {
+  margin-right: 120rpx;
+}
+
+
+.mb {
+  margin-bottom: 20rpx;
+}
+.mb-1 {
+  margin-bottom: 10rpx;
+}
+.mb-2 {
+  margin-bottom: 5rpx;
+}
+.mb1 {
+  margin-bottom: 30rpx;
+}
+.mb2 {
+  margin-bottom: 40rpx;
+}
+.mb3 {
+  margin-bottom: 50rpx;
+}
+.mb4 {
+  margin-bottom: 80rpx;
+}
+.mb5 {
+  margin-bottom: 120rpx;
+}
+
+
+.ml {
+  margin-left: 20rpx;
+}
+.ml-1 {
+  margin-left: 10rpx;
+}
+.ml-2 {
+  margin-left: 5rpx;
+}
+.ml1 {
+  margin-left: 30rpx;
+}
+.ml2 {
+  margin-left: 40rpx;
+}
+.ml3 {
+  margin-left: 50rpx;
+}
+.ml4 {
+  margin-left: 80rpx;
+}
+.ml5 {
+  margin-left: 120rpx;
+}
+
+
+.pt {
+  padding-top: 20rpx;
+}
+.pt-1 {
+  padding-top: 10rpx;
+}
+.pt-2 {
+  padding-top: 5rpx;
+}
+.pt1 {
+  padding-top: 30rpx;
+}
+.pt2 {
+  padding-top: 40rpx;
+}
+.pt3 {
+  padding-top: 50rpx;
+}
+.pt4 {
+  padding-top: 80rpx;
+}
+.pt5 {
+  padding-top: 120rpx;
+}
+
+
+.pr {
+  padding-right: 20rpx;
+}
+.pr-1 {
+  padding-right: 10rpx;
+}
+.pr-2 {
+  padding-right: 5rpx;
+}
+.pr1 {
+  padding-right: 30rpx;
+}
+.pr2 {
+  padding-right: 40rpx;
+}
+.pr3 {
+  padding-right: 50rpx;
+}
+.pr4 {
+  padding-right: 80rpx;
+}
+.pr5 {
+  padding-right: 120rpx;
+}
+
+
+.pb {
+  padding-bottom: 20rpx;
+}
+.pb-1 {
+  padding-bottom: 10rpx;
+}
+.pb-2 {
+  padding-bottom: 5rpx;
+}
+.pb1 {
+  padding-bottom: 30rpx;
+}
+.pb2 {
+  padding-bottom: 40rpx;
+}
+.pb3 {
+  padding-bottom: 50rpx;
+}
+.pb4 {
+  padding-bottom: 80rpx;
+}
+.pb5 {
+  padding-bottom: 120rpx;
+}
+
+
+.pl {
+  padding-left: 20rpx;
+}
+.pl-1 {
+  padding-left: 10rpx;
+}
+.pl-2 {
+  padding-left: 5rpx;
+}
+.pl1 {
+  padding-left: 30rpx;
+}
+.pl2 {
+  padding-left: 40rpx;
+}
+.pl3 {
+  padding-left: 50rpx;
+}
+.pl4 {
+  padding-left: 80rpx;
+}
+.pl5 {
+  padding-left: 120rpx;
+}
+
+/* 撑开盒子 */
+
+.boom {
+  width: 100%;
+  height: 100%;
+}
+
+/* 盒子样式 */
+
+.borderbox {
+  box-sizing: border-box;
+}
+
+/* PNG 图片阴影样式 */
+
+.pngshadow {
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* 穿透点击 */
+
+.fake {
+  pointer-events: none;
+}
+
+/* 背景颜色 */
+
+.backgroundcolor {
+  background-color: #F8F8F8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
