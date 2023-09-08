@@ -1,6 +1,8 @@
 # transport-electron
 
-An Electron application with Vue
+一个使用 Electron-Vite 构建的支持跨平台文件传输的项目
+
+![981c7d82e7c16c06a3f5eb6c201da39](https://github.com/JohnsonSii/transport-electron/assets/67853082/fbe73282-447c-43ca-912b-58bb6535749f)
 
 ## Recommended IDE Setup
 
